@@ -11,6 +11,7 @@ function loginDetails(){
         alert("welcome " + fname + surname + "How was your day today?");
     }
 }
+// alert("hello");
 // Window.onload = function(){
 //     if(window.onload){
 //         alert('hello');
