@@ -8,14 +8,14 @@ function loginDetails(){
         $('#login').css('text-align','center');
     }
     else{
-        alert("welcome " + fname + surname);
+        alert("welcome " + fname + surname + "How was your day today?");
     }
 }
-Window.onload = function(){
-    if(window.onload){
-        alert('hello');
-    }
-    else{
-        alert('Sorry this didnt work')
-    }
-}
+// Window.onload = function(){
+//     if(window.onload){
+//         alert('hello');
+//     }
+//     else{
+//         alert('Sorry this didnt work')
+//     }
+// }
