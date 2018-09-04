@@ -1,0 +1,10 @@
+.custom-scrollbar{
+    color: blue;
+  }
+  p {
+    color: green;
+  }
+  span {
+    color: red;
+    display: none;
+  }
