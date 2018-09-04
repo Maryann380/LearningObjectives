@@ -4,19 +4,15 @@ function loginDetails(){
 
     if(fname == '' || surname == ''){
         document.getElementById('login').innerHTML = 'please introduce yourself';
-        $('#login').css('border','2px solid red');
+        $('#login').addClass('alert alert-danger');
         $('#login').css('text-align','center');
+        $('#login').css('margin-bottom','20px');
+        $('.login').css('border','2px solid red');
     }
     else{
-        alert("welcome " + fname + surname + "How was your day today?");
+        $('.login').css('border','2px solid green');
+        alert("welcome " + fname + " " + surname + " " + "How was your day today?");
+        
+
     }
 }
-// alert("hello");
-// Window.onload = function(){
-//     if(window.onload){
-//         alert('hello');
-//     }
-//     else{
-//         alert('Sorry this didnt work')
-//     }
-// }

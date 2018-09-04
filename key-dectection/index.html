@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../key-dectection/index.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    {# <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> #}
+</head>
+<body>
+    <div class="container">
+        <form action="register">
+            <div class="row">
+                <div class="col8 register-form">
+                    <h1>Register</h1>
+                    <fieldset>
+                        <legend></legend>
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" class="fname">
+                    </fieldset>
+                    <fieldset>
+                        <label for="surname">Surname</label>
+                        <input type="text" class="surname" id="surname">
+                    </fieldset>
+                    <fieldset>
+                        <label for="email">Email</label>
+                        <input type="text" class="email" id="email">
+                    </fieldset>
+                    <fieldset>
+                        <label for="phone">Phone Number</label>
+                        <input onkeydown="return checkPhoneKey(event.key)" placeholder="Phone, please" type="tel" class="phone">
+                    </fieldset>
+                    <fieldset>
+                        <label for="password">Password</label>
+                        <input type="password" class="password" id="password">
+                    </fieldset>
+                    <fieldset>
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" class="confirm-password" id="confirmPassword">
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-group">
+                            <input type="checkbox" class="terms-conditions" id="checkbox">
+                            <label for="checkbox">Accept terms and Conditions</label>
+                        </div>
+                        <div class="form-group">
+                            <!--<button class="btn btn-primary" type="submit" id="submit">Submit</button> -->
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col8">
+                  <div class="last-keys">
+                      <input type="text" id="input001" onkeydown="keyCode(event)" >
+                      <p id="text-entered" onkeydown="keyCode(event)" type="num"></p>
+                  </div>
+                </div>
+            </div>
+        </form>
+                <input onkeydown="return checkPhoneKey(event.key)" placeholder="Phone, please" type="tel">
+    </div>
+    <script src="../key-dectection/index.js"></script>
+</body>
+</html>
