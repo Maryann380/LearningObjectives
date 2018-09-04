@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="register">
+        <form>
             <div class="row">
                 <div class="col8 register-form">
                     <h1>Register</h1>
@@ -31,14 +31,14 @@
                     </fieldset>
                     <fieldset>
                         <label for="phone">Phone Number</label>
-                        <input onkeydown="return checkPhoneKey(event.key)" placeholder="Phone, please" type="tel" class="phone">
+                        <input onkeydown="return checkPhoneKey(event.key)" placeholder="Phone" type="tel" class="phone" id="phone">
                     </fieldset>
                     <fieldset>
                         <label for="password">Password</label>
                         <input type="password" class="password" id="password">
                     </fieldset>
                     <fieldset>
-                        <label for="confirm-password">Confirm Password</label>
+                        <label for="confirmPassword">Confirm Password</label>
                         <input type="password" class="confirm-password" id="confirmPassword">
                     </fieldset>
                     <fieldset>
@@ -47,16 +47,17 @@
                             <label for="checkbox">Accept terms and Conditions</label>
                         </div>
                     </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="button">Submit</button>
+                    </div>
                 </div>
                 <div class="col8">
                   <div class="last-keys">
-                      <input type="text" id="input001" onkeydown="keyCode(event)" >
-                      <p id="text-entered" onkeydown="keyCode(event)" type="num"></p>
+                      <p id="text-entered">The last Key pressed was </p>
                   </div>
                 </div>
             </div>
         </form>
-                <input onkeydown="return checkPhoneKey(event.key)" placeholder="Phone, please" type="tel">
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="../key-dectection/index.js"></script>
