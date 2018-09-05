@@ -1,10 +1,12 @@
-.register-form{
-    border: 2px solid grey;
-    padding: 20px;
-}
 p{
-    position: relative;
     display: inline;
+    position: relative;
     top: 120px;
     margin: 0 0 0 100px;
 }
+.register{
+    border: 2px solid grey;
+    padding: 20px;
+    
+}
+
