@@ -1,4 +1,4 @@
-$(document).ready(function updateDetails(){
+function updateDetails(){
     
 var details = function(){
      $("#update").html("<select name='select-picker class='selectPicker' id='age'> <option value='0'>0-3</option><option value='3'>3-15</option> <option value='18'>18+</option></select>");
@@ -6,4 +6,4 @@ var details = function(){
 }
 
 details();
-});
+}
