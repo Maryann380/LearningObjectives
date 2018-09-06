@@ -7,6 +7,6 @@ window.onload =function(){
         $('body').css("text-align", "center");
         }
     else{
-        $('body').append('<h1>sorry Error while trying to load your jquery</h1>');
+       alert("Sorry Jquery was not Loaded");
     }
 }
