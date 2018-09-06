@@ -1,29 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../intergrate-custom-scroll/custom-scrollbar.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../form-input/index.css" />
-    <link rel="stylesheet" href="/path/to/jquery.mCustomScrollbar.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="/path/to/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
+    
 </head>
-<body>
+<body class="mCustomScrollbar" data-mcs-theme="dark">
     <div class="container">
-        <div class="content">
-        <div class="CustomScrollbar" data-mcs-theme="dark" data-mcs-axis="x">
-             <!--<h1>You can scroll <span>Scroll happened!</span></h1></div>-->
-
+        <div class="row">
+            <div class="col register-form">
+                <form action="register">
+                    <h1>Register</h1>
+                    <fieldset>
+                        <legend></legend>
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" class="fname">
+                    </fieldset>
+                    <fieldset>
+                        <label for="surname">Surname</label>
+                        <input type="text" class="surname" id="surname">
+                    </fieldset>
+                    <fieldset>
+                        <label for="email">Email</label>
+                        <input type="text" class="email" id="email">
+                    </fieldset>
+                    <fieldset>
+                        <label for="phone">Phone Number</label>
+                        <input placeholder="Phone, please" type="tel" class="phone" id="phone">
+                    </fieldset>
+                    <fieldset>
+                        <label for="password">Password</label>
+                        <input type="password" class="password" id="password">
+                    </fieldset>
+                    <fieldset>
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" class="confirm-password" id="confirmPassword">
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-group">
+                            <input type="checkbox" class="terms-conditions" id="checkbox">
+                            <label for="checkbox">Accept terms and Conditions</label>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col8">
+                <div class="image">
+                    <img src="../intergrate-custom-scroll/img/Nice_logo1-2.jpg" alt="this is nice">
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-   
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="../intergrate-custom-scroll/custom-scrollbar.js"></script>
+    
 
 </body>
 </html>

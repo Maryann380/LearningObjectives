@@ -1,3 +1,4 @@
+<<<<<<< .merge_file_jHFrNY
 // $( "h1" ).clone().appendTo( document.body );
 // $( "h1" ).clone().appendTo( document.body );
 // $( "h1" ).clone().appendTo( document.body );
@@ -16,3 +17,10 @@
     });
   });
 })(jquery);
+=======
+(function($){
+  $(window).on("load",function(){
+    $(".content").mCustomScrollbar();
+  });
+})(jQuery);
+>>>>>>> .merge_file_lCda1P

@@ -1,10 +1,17 @@
-.custom-scrollbar{
-    color: blue;
+  .container{
+    width: 100%;
+    margin: 50px auto;
   }
-  p {
-    color: green;
+  .endpoint{
+    text-align: center;
+    position: fixed;
+
   }
-  span {
-    color: red;
-    display: none;
+  .register-form{
+  border: 2px solid grey;
+  padding: 20px;
   }
+  img{
+    margin-top: 20px;
+  }
+  
