@@ -1,5 +1,6 @@
-select#age{
-    color: pink;
+.update-1{
     display: none;
-
+}
+.form-group{
+    margin: 20px;
 }
