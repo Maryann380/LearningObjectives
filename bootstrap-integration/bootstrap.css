@@ -1,0 +1,40 @@
+html{
+      margin:0;
+      padding: 0;
+      width: 100%;
+}
+.accordion{
+   background:purple;
+   color: black;
+   cursor: pointer;
+   padding: 18px;
+   width: 100%;
+   text-align: left;
+   border: 1px solid white;
+   transition: 0.1s;
+   font: 20px Lato, sans-serif;
+   outline: none;
+}
+.accordion:after{
+    content: '\02795';
+    font-size: 15px;
+    float: right;
+    margin-left: 5px;
+    color: white;
+}
+.active:after{
+    content: '\2796';
+    color:white;
+}
+.panel{
+    padding: 0 18px;
+    background: white;
+    /* display: none; */
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+}
+p{
+    font: 16px Lato, sans-serfif;
+    padding: 20px;
+}
