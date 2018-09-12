@@ -7,15 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../modals/index.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
 </head>
 <body>
     <div class="container">
             <button class="button" id="modalBtn">Submit</button>
-            <div class="modal" id="simpleModal">
+            <div id="simpleModal" class="modal">
                 <div class="modal-content">
-                    <span class="" id="closeBtn">&times;</span>
-                    <p>HELLO  I AM A MODAL</p>
+                    <div class="modal-header">
+                        <span id="closeBtn">&times;</span>
+                        <h2>Modal header</h2>
+                    </div>
+                    <div class="modal-body">
+                        <h2>Modal body</h2>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+                            Eum ducimus sit consequuntur corrupti inventore rem, quaerat facere facilis,<br>
+                            voluptatem iusto dolor ex eveniet iure reprehenderit velit quos earum laudantium accusantium.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <h2>Modal footer</h2>
+                    </div>
                 </div>
             </div>
         </div>
