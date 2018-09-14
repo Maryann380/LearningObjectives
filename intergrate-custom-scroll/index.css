@@ -9,11 +9,7 @@
   img{
     margin-top: 20px;
   }
-/* .register-form{
-    overflow-x: auto;
-  white-space: nowrap;
-  } */
   .register-form fieldset{
-    overflow-x: auto;
+    overflow:hidden;
   white-space: nowrap;
   }

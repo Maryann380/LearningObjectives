@@ -22,24 +22,29 @@
 //   });
 // })(jQuery);
 
-// // document.getElementById(".register-form").style.overflow='auto';
-// // alert('hello');
-// // (function($){
-// //   $(window).on("load",function(){
-// //     $(".mcs-horizontal-example").mCustomScrollbar({
-// //       axis:"y",
-// //       theme:"dark-3",
-// //       advanced:{
-// //         autoExpandHorizontalScroll:2
-// //       },
-// //       callbacks:{
-// //         onCreate:function(){
-// //           $(this).find("p").css("width",$(this).width());
-// //         },
-// //         onBeforeUpdate:function(){
-// //           $(this).find("p").css("width",$(this).width());
-// //         }
-// //       }
-// //     });
-// //   });
-// // })(jQuery);
+//  document.getElementById(".register-form").style.overflow='auto';
+//  alert('hello');
+//  (function($){
+//    $(window).on("load",function(){
+//      $(".mcs-horizontal-example").mCustomScrollbar({
+//        axis:"y",
+//        theme:"dark-3",
+//        advanced:{
+//          autoExpandHorizontalScroll:2
+//        },
+//        callbacks:{
+//          onCreate:function(){
+//            $(this).find("p").css("width",$(this).width());
+//          },
+//          onBeforeUpdate:function(){
+//            $(this).find("p").css("width",$(this).width());
+//          }
+//        }
+//      });
+//    });
+//  })(jQuery);
+(function($){
+    $(window).on("load",function(){
+        $(".content").mCustomScrollbar();
+    });
+})(jQuery);
