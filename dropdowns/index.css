@@ -1,0 +1,113 @@
+/* Tooltip */
+  *{
+      margin: 0;
+      padding: 0;
+    }
+    .info{
+        display: block;
+        position: relative;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 200px;
+        padding: 10px 0;
+        /* margin: 10px auto; */
+        color: #000;
+        font-size: 14px;
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+        border: 1px solid #000;
+        border-radius: 10px;
+    }
+    .tooltip{
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 120%;
+        width: 190px;
+        padding: 5px;
+        border-radius: 10px;
+        background: #09f;
+        color: #fff;
+        text-transform: none;
+        font-size: 12px;
+        opacity: 0;
+        transform: scaleY(0);
+        transition: all 0.2s ease;
+    }
+    .tooltip:after{
+        position: absolute;
+        content: '';
+        left: 10px;
+        bottom: -5px;
+        width: 0;
+        height: 0;
+        border-top: 5px solid #09f;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+
+    }
+    .info:hover .tooltip{
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+    label {
+        display: inline-block;
+        width: 5em;
+      }
+
+    .ui-helper-hidden-accessible{
+        visibility: hidden;
+    }
+    .bootstrap-tooltip h2{
+        margin-bottom: 45px;
+        /* margin-top:100px; */
+    }
+/* Carousel */
+    .carousel-control{
+        font-size: 133px;
+    }
+    .carousel-inner>.item>a>img, .carousel-inner>.item>img {
+        line-height: 1;
+        margin: 50px auto;
+    }
+/* Accordion */
+    html{
+        margin:0;
+        padding: 0;
+        width: 100%;
+  }
+  .accordion{
+     background:purple;
+     color: black;
+     cursor: pointer;
+     padding: 18px;
+     width: 100%;
+     text-align: left;
+     border: 1px solid white;
+     transition: 0.1s;
+     font: 20px Lato, sans-serif;
+     outline: none;
+  }
+  .accordion:after{
+      content: '\02795';
+      font-size: 15px;
+      float: right;
+      margin-left: 5px;
+      color: white;
+  }
+  .accordion.active:after{
+      content: '\2796';
+      color:white;
+  }
+  .panel{
+      padding: 0 18px;
+      background: white;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.2s ease-out;
+  }
+  p{
+      font: 16px Lato, sans-serfif;
+      padding: 20px;
+  }
