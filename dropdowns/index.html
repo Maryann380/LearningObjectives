@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
+
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="../dropdowns/index.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="bootstrap-tab">
+            <h2>Tabs</h2>
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#accordion" aria-controls="accordion" role="tab" data-toggle="tab">Accordion</a></li><li role="presentation"><a href="#dropdown" aria-controls="dropdown" role="tab" data-toggle="tab">Dropdown</a></li>
+                    <li role="presentation"><a href="#tooltip" aria-controls="tooltip" role="tab" data-toggle="tab">Tooltip</a></li>
+                    <li role="presentation"><a href="#carousel" aria-controls="carousel" role="tab" data-toggle="tab">Carousel</a></li>
+                    <li role="presentation"><a href="#datepicker" aria-controls="datepicker" role="tab" data-toggle="tab">Datepicker</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active">
+                        <div class="wrapper">
+                            <h1>Animated Accordion</h1>
+                            <button class="accordion" type="button" id="accordion"> Section 1</button>
+                            <div class="panel">
+                                <p> 
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem <br>porro doloribus sint eum a animi 
+                                    sapiente adipisci neque quasi, repellat sunt<br> fugit, labore in. Voluptatem nemo quasi odit illo labore!
+                                </p>
+                            </div>
+                            <button class="accordion" type="button"> Section 2</button>
+                            <div class="panel">
+                                <p> 
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Quidem porro doloribus sint eum a animi 
+                                    sapiente adipisci neque quasi, repellat sunt fugit,<br> labore in. Voluptatem nemo quasi odit illo labore!
+                                </p>
+                            </div>
+                            <button class="accordion" type="button"> Section 3</button>
+                            <div class="panel">
+                                <p> 
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br> Quidem porro doloribus sint eum a animi 
+                                    sapiente adipisci neque quasi, repellat sunt fugit,<br> labore in. Voluptatem nemo quasi odit illo labore!
+                                </p>
+                            </div>
+                            <button class="accordion" type="button"> Section 4</button>
+                            <div class="panel">
+                                <p> 
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br> Quidem porro doloribus sint eum a animi 
+                                    sapiente adipisci neque quasi, repellat sunt fugit, labore in. Voluptatem nemo quasi odit illo labore!
+                                </p>
+                            </div>
+                            <button class="accordion" type="button"> Section 1</button>
+                            <div class="panel">
+                                <p> 
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem porro doloribus sint eum a animi <br>
+                                    sapiente adipisci neque quasi, repellat sunt fugit, labore in. Voluptatem nemo quasi odit illo labore!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="dropdown">
+                            <div class="bootstrap-dropdown">
+                                <h2>Dropdown</h2>
+                                <div class="dropdown">
+                                    <p>What is your favourite hobby?</p>
+                                    <button id="dropdownmenu" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                        Dropdown
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#sport"> Sport</a></li>
+                                        <li><a href="#shopping">Shopping</a></li>
+                                        <li><a href="#reading">Reading</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="tooltip">
+                            <div class="bootstrap-tooltip">
+                                <h2>Tooltip</h2>
+                                <button class="info btn-primary" title="tooltip" id="tooltipButton" data-tooltip-text="Hello I am a tooltip" >Submit</button>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="carousel">
+                            <h2>Carousels</h2>
+                            <div id="myCarousel" class="carousel slide">
+                                <div class="carousel-inner">
+                                    <div class="active item"><a href="#"><img src="../imgs/img1.jpeg" alt="everything beautiful"></a></div>
+                                    <div class="item"><a href="#"><img src="../imgs/img2.jpeg" alt="everything beautiful"></a></div>
+                                    <div class="item"><a href="#"><img src="../imgs/nice.jpg" alt="everything beautiful"></a></div>
+                                    <div class="item"><a href="#"><img src="../imgs/sunset.jpeg" alt="everything beautiful"></a></div>
+                                    <div class="item"><a href="#"><img src="../imgs/teardrop.jpeg" alt="everything beautiful"></a></div>
+                                    <div class="item"><a href="#"><img src="../imgs/bottle.jpeg" alt="everything beautiful"></a></div>
+                                </div>
+                                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="datepicker">
+                            <h2>Date Picker</h2>
+                            <div class="row">
+                                <div class='col-xs-6 col-md-4'>
+                                    <div class="form-group">
+                                        <label for="departure">Departure</label>
+                                        <div class='input-group date' id='datetimepickerDeparture'>
+                                            <input type='text' class="form-control" id="departure"/>
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='col-xs-6 col-md-4'>
+                                    <div class="form-group">
+                                        <label for="to">To</label>
+                                        <div class='input-group date' id='datetimepickerTo'>
+                                        <input type='text' class="form-control" id="to" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../dropdowns/index.js"></script>
+</body>
+</html>
