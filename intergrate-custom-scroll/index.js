@@ -26,7 +26,12 @@
     
 // })
 
-        $(window).on("load",function(){
-            $(".register-form").mCustomScrollbar();
-        });
+        // $(window).on("load",function(){
+        //     $(".register-form").mCustomScrollbar();
+        // });
  
+
+$( document ).ready(function() {
+    $(".register-detail").mCustomScrollbar();
+});
+
