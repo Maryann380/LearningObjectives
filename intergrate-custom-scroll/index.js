@@ -3,4 +3,4 @@
         $(".content").mCustomScrollbar();
     });
 })(jQuery);
->>>>>>> custom-scrollbar
+
