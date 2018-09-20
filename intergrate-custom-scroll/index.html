@@ -5,60 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../intergrate-custom-scroll/index.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
-    
+    <link rel="stylesheet" type="text/css" media="screen" href="../intergrate-custom-scroll/index.css" />
 </head>
-<body class="mCustomScrollbar" data-mcs-theme="dark">
+<body>
     <div class="container">
-        <div class="row">
-            <div class="col register-form">
-                <form action="register">
+        <form action="register" class="register">
+            <div class="row">
+                <div class="col">
                     <h1>Register</h1>
-                    <fieldset>
-                        <legend></legend>
-                        <label for="fname">First Name</label>
-                        <input type="text" id="fname" class="fname">
-                    </fieldset>
-                    <fieldset>
-                        <label for="surname">Surname</label>
-                        <input type="text" class="surname" id="surname">
-                    </fieldset>
-                    <fieldset>
-                        <label for="email">Email</label>
-                        <input type="text" class="email" id="email">
-                    </fieldset>
-                    <fieldset>
-                        <label for="phone">Phone Number</label>
-                        <input placeholder="Phone, please" type="tel" class="phone" id="phone">
-                    </fieldset>
-                    <fieldset>
-                        <label for="password">Password</label>
-                        <input type="password" class="password" id="password">
-                    </fieldset>
-                    <fieldset>
-                        <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" class="confirm-password" id="confirmPassword">
-                    </fieldset>
-                    <fieldset>
-                        <div class="form-group">
-                            <input type="checkbox" class="terms-conditions" id="checkbox">
-                            <label for="checkbox">Accept terms and Conditions</label>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-            <div class="col8">
-                <div class="image">
-                    <img src="../intergrate-custom-scroll/img/Nice_logo1-2.jpg" alt="this is nice">
+                    <div class="content mCustomScrollbar" data-mcs-theme="rounded-dots-dark">
+                        <fieldset>
+                            <legend></legend>
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" class="fname"><br>
+                        
+                            <label for="surname">Surname</label>
+                            <input type="text" class="surname" id="surname"><br>
+                                
+                            <label for="age">age</label>
+                            <input type="number" class="age" id="age"><br>
+                            
+                            <label for="email">Email</label>
+                            <input type="text" class="email" id="email"><br>
+                            
+                            <label for="phone">Phone Number</label>
+                            <input placeholder="Phone, please" type="tel" class="phone" id="phone"><br>
+                            
+                            <label for="password">Password</label>
+                            <input type="password" class="password" id="password"><br>
+                            
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" class="confirm-password" id="confirmPassword">
+                            
+                            <div class="form-group terms-conditins">
+                                <input type="checkbox" id="checkbox">
+                                <label for="checkbox">Accept terms and Conditions</label>
+                            </div>
+                        </fieldset>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci odio sapiente quasi quibusdam, quisquam consequuntur officiis ullam accusantium, mollitia voluptas, excepturi iure consectetur inventore distinctio nobis beatae id modi officia. </p>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nulla vel voluptate ea dolorum quam illo aut harum dolorem in, neque accusantium facilis. Ab nisi nostrum laudantium, porro quisquam maiores! </p>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nulla vel voluptate ea dolorum quam illo aut harum dolorem in, neque accusantium facilis. Ab nisi nostrum laudantium, porro quisquam maiores! </p>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nulla vel voluptate ea dolorum quam illo aut harum dolorem in, neque accusantium facilis. Ab nisi nostrum laudantium, porro quisquam maiores! </p>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nulla vel voluptate ea dolorum quam illo aut harum dolorem in, neque accusantium facilis. Ab nisi nostrum laudantium, porro quisquam maiores! </p>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nulla vel voluptate ea dolorum quam illo aut harum dolorem in, neque accusantium facilis. Ab nisi nostrum laudantium, porro quisquam maiores! </p>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nulla vel voluptate ea dolorum quam illo aut harum dolorem in, neque accusantium facilis. Ab nisi nostrum laudantium, porro quisquam maiores! </p>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nulla vel voluptate ea dolorum quam illo aut harum dolorem in, neque accusantium facilis. Ab nisi nostrum laudantium, porro quisquam maiores! </p>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nulla vel voluptate ea dolorum quam illo aut harum dolorem in, neque accusantium facilis. Ab nisi nostrum laudantium, porro quisquam maiores! </p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="../intergrate-custom-scroll/img/Nice_logo1-2.jpg" alt="its nice">
                 </div>
             </div>
-        </div>
+        </form>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
 </body>
 </html>

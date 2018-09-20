@@ -1,12 +1,12 @@
-  .container{
-    width: 100%;
-    margin: 50px auto;
-  }
-  .register-form{
-  border: 2px solid grey;
-  padding: 20px;
-  }
-  img{
-    margin-top: 20px;
-  }
-  
+
+.content {
+  width: 350px;
+  height: 200px;
+  overflow: hidden;
+  border:2px solid grey;
+  padding: 10px;
+  background: aliceblue;
+}
+.terms-conditins{
+  padding-top: 5px;
+}
