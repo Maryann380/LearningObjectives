@@ -1,41 +1,12 @@
-   .container{
-    /* width: 50%; */
-    margin: 50px auto;
-  }
-   .register-form{
-  border: 2px solid grey;
-  padding: 20px;
 
-  }
-  img{
-    margin-top: 20px;
-  }
-  /* body{
-    background-color: #222;
-    color: #eee;
-    font-size: 14px;
-    font-family: "Verdana",Geneva,sans-serif;
-    margin: 0;
-    padding: 0;
-    min-width: 480px;
- } */
-  /* .register-detail{
-    background: #49505a;
-    /* max-height:400px;
-    max-width:400px; 
-    padding: 20px;
-    overflow: auto;
-  } */
-.content{
-  overflow: auto;
-  position: relative;
-  padding: 20px;
-  background: #333;
-  margin: 10px;
-  width: 740px;
-  max-width: 97%;
-  height: 400px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+.content {
+  width: 350px;
+  height: 200px;
+  overflow: hidden;
+  border:2px solid grey;
+  padding: 10px;
+  background: aliceblue;
+}
+.terms-conditins{
+  padding-top: 5px;
 }
