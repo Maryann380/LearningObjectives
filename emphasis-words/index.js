@@ -8,7 +8,7 @@
     }
 
 const ul = document.getElementById('users'); // Get the list where we will place our authors
-const url = 'https://randomuser.me/api/?results=5'; // Get 10 random users
+const url = 'https://randomuser.me/api/?results=5'; // Get 5random users
 
 fetch(url)
     .then((resp) => resp.json()) // Transform the data into json
@@ -19,7 +19,7 @@ fetch(url)
               img = createNode('img'),
               span = createNode('span');
           img.src = users.picture.medium;  // Add the source of the image to be the src of the img element
-          span.innerHTML = ` ${users.name.title} ${users.name.first} ${users.name.last} ${users.name.DOB}`; // Make the HTML of our span to be the first and last name of our author
+          span.innerHTML = ` ${users.name.title} <strong> ${users.name.first} ${users.name.last} </strong> ${users.dob.age}`;
           append(li, img); // Append all our elements
           append(li, span);
           append(ul, li);
