@@ -51,3 +51,8 @@ for (i = 0; i < acc.length; i++){
         });
     });
 });
+(function($){
+    $(window).on("load",function(){
+        $(".content").mCustomScrollbar();
+    });
+})(jQuery);
