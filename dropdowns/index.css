@@ -111,3 +111,16 @@
       font: 16px Lato, sans-serfif;
       padding: 20px;
   }
+
+.content {
+    width: 350px;
+    height: 200px;
+    overflow: hidden;
+    border:2px solid grey;
+    padding: 10px;
+    background: aliceblue;
+    /* display: none; */
+  }
+  .terms-conditins{
+    padding-top: 5px;
+  }
