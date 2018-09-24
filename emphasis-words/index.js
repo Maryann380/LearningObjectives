@@ -1,11 +1,10 @@
-  $(document).ready(function(){
-      function createNode(element) {
-        return document.createElement(element); // Create the type of element you pass in the parameters
-      }
-    
-      function append(parent, el) {
-    return parent.appendChild(el); // Append the second parameter(element) to the first one
-    }
+function createNode(element) {
+    return document.createElement(element); // Create the type of element you pass in the parameters
+  }
+
+  function append(parent, el) {
+return parent.appendChild(el); // Append the second parameter(element) to the first one
+}
 
 const ul = document.getElementById('users'); // Get the list where we will place our authors
 const url = 'https://randomuser.me/api/?results=5'; // Get 5random users
@@ -19,7 +18,7 @@ fetch(url)
               img = createNode('img'),
               span = createNode('span');
           img.src = users.picture.medium;  // Add the source of the image to be the src of the img element
-          span.innerHTML = ` ${users.name.title} <strong> ${users.name.first} ${users.name.last} </strong> ${users.dob.age}`;
+          span.innerHTML = ` ${users.name.title} <strong> ${users.name.first} ${users.name.last} </strong> ${users.dob.age} `;
           append(li, img); // Append all our elements
           append(li, span);
           append(ul, li);
@@ -27,6 +26,5 @@ fetch(url)
       })
       .catch(function(error) {
         console.log(error);
-      });
-    })   
+      });  
     

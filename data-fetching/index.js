@@ -21,7 +21,7 @@ fetch(url)
         dob = createNode('dob'), 
         span = createNode('span'); 
     img.src = human.picture.medium;
-    span.innerHTML = `${human.name.title} ${human.name.first} ${human.name.last} ${human.dob.age} ${human.email.email} ${human.phone.phone}`;
+    span.innerHTML = ` ${human.name.title} ${human.name.first} ${human.name.last} ${human.dob.age} ${human.email} ${human.phone} `;
     append(li, img,title, name, surname, dob);
     append(li, span);
     append(ul, li);
