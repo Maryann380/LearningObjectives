@@ -1,0 +1,108 @@
+/* .login{
+    padding: 20px;
+    position: relative;
+    display: table-caption;
+}
+.login-overlay{
+ position: fixed; 
+    top: 0;
+    bottom: 0;
+    width: 315px;
+    background-color: #fff;
+}
+div.login-layout{
+    background-image: url(../imgs/easyjet-img.jpeg);
+    background-size: cover;
+}
+.container-desktop-agent{
+    height: 100%;
+    display: flex;
+}
+div.login-layout div.login-overlay div.login-header{
+    padding: 30px 20px;
+    border-bottom: 1px SOLID #e4e4e4;
+    text-align: center;
+}
+div.login-layout div.login-overlay div.login-form {
+    padding: 30px 20px;
+}
+.custom-button.primary {
+    transition: background-color 0.4s, border-color 0.25s, color 0.4s;
+    font-family: Nunito;
+    height: 34px;
+    line-height: 18px;
+    padding: 8px 20px;
+    border: 1px SOLID;
+    font-weight: bold;
+    border-radius: 2px;
+    background-color: #ff6600;
+    border-color: #ff6600;
+    color: #fff;
+}
+.custom-button.btn-primary:hover {
+    background-color: #ff6600;
+    border-color: #ff6600;
+}
+div.login-layout div.login-overlay div.login-form div.login-actions p {
+    text-align: center;
+}
+div.login-layout div.login-overlay div.login-form div.login-actions p a {
+    text-decoration: underline;
+    color: #2b2c33;
+}
+.login-actions .custom-button.btn {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+div.login-layout div.login-overlay div.login-footer {
+    position: fixed;
+    bottom: 0;
+    height: 55px;
+    width: 315px;
+}
+
+div.login-layout div.login-overlay div.login-footer div.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 105px;
+    height: 24px;
+    background-image: url(../imgs/easyJet-logo.png);
+    background-repeat: no-repeat;
+}
+#scrollable-dropdown-menu .tt-dropdown-menu {
+    max-height: 150px;
+    overflow-y: auto;
+  } */
+  
+.well-footer{
+    width: 100%;
+    height: 50px;
+    background-color: #e4e4e4;
+    border-bottom: 3px solid #7f0000;
+    border-bottom: 3px solid rgba(43, 44, 51, 0.25);
+    background-clip: padding-box;
+}
+.well-footer .custom-checkbox {
+    width: 110px;
+    margin-top: 11px;
+    margin-left: 8px;
+}
+.well-footer .plusDays {
+    float: left;
+    width: 140px;
+    padding-left: 10px;
+    margin-top: 7px;
+    position: relative;
+}
+.well-footer .selectLessGreater {
+    /* float:left; */
+    width: 120px;
+    height: 34px;
+    display: inline-block;
+    margin-top: 8px;
+}
+.well-footer .search-form-button-container {
+    float: right;
+}

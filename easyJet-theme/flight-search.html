@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
+
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="../dropdowns/index.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="flight-search">
+            <div class="well">
+                <div class="row">
+                    <div class='col-xs-6 col-md-4'>
+                        <div class="form-group">
+                            <label for="departure">From</label>
+                            <div class='input-group date' id='departureFrom'>
+                                <input type='text' class="form-control" id="departure" data-provide="typeahead"/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-option-vertical"></span>
+                                </span>
+                            </div>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="departure">Departing </label>
+                            <div class='input-group date' id='datetimepickerDeparture'>
+                                <input type='text' class="form-control" id="departure"/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                     </div>
+                        <div class='col-xs-6 col-md-4'>
+                        <div class="form-group">
+                            <label for="departureTo">To</label>
+                            <div class='input-group date' id='departureTo'>
+                            <input type='dropdown' class="form-control" id="to" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-option-vertical"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="datetimepickerTo">Returning</label>
+                            <div class='input-group date' id='datetimepickerTo'>
+                            <input type='text' class="form-control" id="to" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="well-footer">
+                <div class="custom-checkbox pull-left sml">
+                    <input id="checkboxIndirect" class="light" type="checkbox" name="test" tabindex="30">
+                    <label for="checkboxIndirect" class="sml-chk-box">
+                    <span>Indirect</span>
+                    </label>
+                </div>
+                <div class="plusDays">
+                    <input id="flexiblelimit" type="number" hidden="">
+                    <input type="number" id="plusDaysInput" min="0" value="1" tabindex="31" name="requestData.flexibleDays">
+                    <label for="plusDaysInput">
+                    <span>+ day(s)</span>
+                    </label>
+                </div>
+                <div class="selectLessGreater custom-dropdown type-one">
+                    <div class="visuallyhidden">
+                    <label for="filter-by-value">Filter by value</label>
+                    </div>
+                    <div class="btn-group bootstrap-select"><button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="filter-by-value" tabindex="32" title="Nothing selected"><span class="filter-option pull-left">Nothing selected</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><ul class="dropdown-menu inner" role="listbox" aria-expanded="false"></ul></div><select class="selectpicker" id="filter-by-value" name="select-picker" tabindex="-98">
+                    </select></div>
+                </div>
+                <div class="valueLessGreater">
+                    <div class="valueLessGreater-currency">
+                    <label for="search-amt" id="locationCurrency">£</label>
+                    </div>
+                    <input type="text" id="currencyDTO" hidden="hidden">
+                    <input type="text" id="currency" hidden="hidden">
+                    <input type="text" id="allowedDecimals" hidden="hidden">
+                    <input type="text" id="currencySymbol" hidden="hidden">
+                    <input type="text" class="form-control" id="search-amt" name="requestData.filterPrice" tabindex="33">
+                </div>
+                <div class="search-form-button-container">
+                    <button type="submit" name="button" id="submit-flight-search" class="search-form-button" data-element="search" tabindex="34">
+                    <span>Search</span>
+                    </button>
+                </div>
+                          
+            </div>
+        </div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+<script src="../easyJet-theme/index.js"></script>
+</body>
+</html>
