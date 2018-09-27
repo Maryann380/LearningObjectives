@@ -249,3 +249,94 @@
 //       source: countries
 //     });
 // })
+
+// function createNode(element) {
+//     return document.createElement(element);
+// }
+
+// function append(parent, el) {
+//   return parent.appendChild(el);
+// }
+
+// const ul = document.getElementById('submit-flight-search');
+// const url = 'http://localhost:9000/validate-data/validator-FindFlight.json';
+// fetch(url)
+// .then((resp) => resp.json())
+// .then(function(data) {
+//   let country = data.results;
+//   return country.map(function(country) {
+//     let tr = createNode('tr'),
+//         td = createNode('td'), 
+//         title = createNode('title'), 
+//         name = createNode('name'), 
+//         surname = createNode('surname'), 
+//         dob = createNode('dob'), 
+//         span = createNode('span'); 
+//     img.src = country.picture.medium;
+//     span.innerHTML = `${country.code} ${country.text} ${country.type}`;
+//     append(tr, td);
+//     // append(li, span);
+//     // append(ul, li);
+//   })
+// })
+// .catch(function(error) {
+//   console.log(JSON.stringify(error));
+// });   
+
+
+// var infoElm = $(".info");
+//     //arraying through every element on the page
+//     infoElm.each(function(){
+//         var self = $(this),
+//     //getting and saving the element of self
+//           selfTooltipText = self.data('tooltip-text');
+//         if(selfTooltipText)
+//     //creating an element
+//         $('<span/>', {
+//             class:'tooltip', text: selfTooltipText}).appendTo(self);
+//         });
+    
+// (function($){
+//     // $(window).on("load",function(){
+//     //     $(".content").mCustomScrollbar();
+//     // });
+//     $("#departure").keyup(function(){
+//         $("#result").html('');
+//         var searchField =$('#search').val();
+//         var expression = new RegExp(searchField, "i");
+//         $.getJSON('data.json', function(data){
+//             $.each(data, function(key, value){
+//                 if(value.name.search(expression) != -1 || value.location.search(
+//                     expression)!= -1){
+//                         $("#result").append('<tr class = "countries"><td>' + value.code + 'height="40" width="40" class="country"/>' + value.text + '</tr>')
+//                     }
+//                 })
+//             })
+//         })
+// })(jQuery);
+
+
+
+// $(document).ready(function(){
+//     // Defining the local dataset
+//     var cars = ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen'];
+    
+//     // Constructing the suggestion engine
+//     var cars = new Bloodhound({
+//         datumTokenizer: Bloodhound.tokenizers.whitespace,
+//         queryTokenizer: Bloodhound.tokenizers.whitespace,
+//         local: cars
+//     });
+    
+//     // Initializing the typeahead
+//     $('.typeahead').typeahead({
+//         hint: true,
+//         highlight: true, /* Enable substring highlighting */
+//         minLength: 1 /* Specify minimum characters required for showing result */
+//     },
+//     {
+//         name: 'cars',
+//         source: cars
+//     });
+// });  
+
