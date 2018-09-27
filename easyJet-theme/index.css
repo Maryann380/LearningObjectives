@@ -383,3 +383,6 @@ form.search{
     margin-top: 20px;
     margin-bottom: -8px;
 }
+.clsDatePicker {
+    z-index: 100000;
+}

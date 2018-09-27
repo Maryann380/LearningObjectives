@@ -7,10 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    
-    
     <link rel="stylesheet" type="text/css" media="screen" href="../easyJet-theme/index.css" />
 </head>
 <body>
@@ -30,7 +28,7 @@
                     </div>
                     <div class="column dropdown-user-type">
                         <div class="custom-dropdown type-three">
-                            <button class="btn dropdown-toggle" type="button" id="dropdown-user-type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <button class="btn dropdown-toggle" type="button" id="dropdown-user-type" aria-haspopup="true" aria-expanded="true">
                                 <span class="filter-option pull-left">Customer</span>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user-type">
@@ -65,6 +63,7 @@
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
                                 </div>
+                                
                             </div>
                         </div>
                         <div class='col-xs-6 col-md-4'>
@@ -109,7 +108,7 @@
                         <label for="filter-by-value">Filter by value</label>
                     </div>
                     <div class="btn-group bootstrap-select">
-                        <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="filter-by-value" tabindex="32" title="Nothing selected">
+                        <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" role="button" data-id="filter-by-value" tabindex="32" title="Nothing selected">
                             <span class="filter-option pull-left">Nothing selected</span>&nbsp;
                             <span class="bs-caret">
                                 <span class="caret"></span>
@@ -137,6 +136,47 @@
                 </div>
             </div>
         </div>
+        <!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Launch demo modal</button>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+                <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Create new event</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label class="col-xs-4" for="title">Event title</label>
+                                <input type="text" name="title" id="title" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label class="col-xs-4" for="starts-at">Starts at</label>
+                                <input type="text" name="starts_at" id="starts-at" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label class="col-xs-4" for="ends-at">Ends at</label>
+                                <input type="text" name="ends_at" id="ends-at" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="save-event">Save changes</button>
+                    </div>
+                </div><!-- /.
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
         <section class="main-panel__search-results__column-12" data-interact="fixedTable">
         <div class="main-panel__search-results--header row reset-margin-left reset-margin-right" data-interact="fixedTableHeader">
             <div class="column one search-view-radio">
@@ -231,20 +271,16 @@
                 </tr>
             </thead>
             <tbody class="content mCustomScrollbar" data-mcs-theme="minimal-dark">
-                    <div class="bs-example">
-                            <h2>Type your favorite car name</h2>
-                            <input type="text" class="typeahead tt-query" autocomplete="off" spellcheck="false">
-                        </div>
+                
             </tbody>
         </table>
-    </section>
+        </section>
     </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="../easyJet-theme/index.js"></script>
 </body>
 </html>
