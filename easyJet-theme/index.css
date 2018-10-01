@@ -82,6 +82,8 @@ div.login-layout div.login-overlay div.login-footer div.logo {
 
 .well{
     margin-bottom: 0;
+    border-radius: 0;
+
   }
   
 .well-footer{
@@ -304,7 +306,7 @@ reg section span {
     word-wrap: break-word;
 }
 .container-main-panel--title-bar {
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     left: 0;
     top: 0;
@@ -346,7 +348,6 @@ reg section span {
 }
 .search-bar-header .column, .customer-search-header-bar .column{
 float: right !important;
-    float: right;
     position: relative;
     line-height: 34px;
     margin: 8px 0;
@@ -371,18 +372,98 @@ float: right !important;
 }
 .content {
     overflow: auto;
-    border:2px solid grey;
     padding: 10px;
     background: aliceblue;
-    /* display: none; */
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+
   }
 
 form.search{
     height: 223px;
     padding-bottom: 0px;
-    margin-top: 20px;
     margin-bottom: -8px;
 }
-.clsDatePicker {
-    z-index: 100000;
+
+
+.flight-calendar-tabs {
+    display: inline;
+    /* margin-bottom:5%; */
+    padding: 0;
 }
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.col-md-12 {
+    float: left;
+}
+.flight-calendar .active {
+    background-color: #2b2c33;
+    color: #fff;
+}
+.flight-calendar .return-tab {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.flight-calendar .return-tab{
+    height: 34px;
+    border-radius: 3px;
+    background-color: #f4f8fb;
+    border: solid 2px #2b2c33;
+    text-align: center;
+}
+.flight-calendar .return-tab{
+height: 34px;
+border-radius: 3px;
+background-color: #f4f8fb;
+border: solid 2px #2b2c33;
+text-align: center;
+}
+.flight-calendar .one-way-tab {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.flight-calendar label {
+    margin-top: 6px;
+}
+.flight-calendar-tabs .one-way-tab, .flight-calendar-tabs .return-tab {
+    height: 34px;
+    border-radius: 3px;
+    /* background-color: #f4f8fb; */
+    border: solid 2px #2b2c33;
+    text-align: center;
+}
+.ui-datepicker table {
+    /* width: 100%; */
+    font-size: .9em;
+    border-collapse: collapse;
+    margin: 0 0 .4em;
+}
+.modals-component__calendar--modal--modal-dialog--modal-content .ui-datepicker .ui-datepicker-header {
+    padding: 0.5em 0;
+}
+.modals-component__calendar--modal--modal-dialog--modal-content .ui-widget-header {
+    background-color: #fff;
+    border: none;
+}
+.ui-datepicker .ui-datepicker-header {
+    position: relative;
+    padding: .2em 0;
+}
+
+.form-group .Zebra_DatePicker {
+     background: transparent;
+     border: none;
+     box-shadow: none;
+     position: relative;
+ }
+ .col-md-6{
+     padding: 15px 15px;
+ }
+ .flight-calendar-tabs label{
+     padding-top: 5px;
+ }

@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-typeahead/2.10.6/jquery.typeahead.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Zebra_datepicker/1.9.11/css/bootstrap/zebra_datepicker.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../easyJet-theme/index.css" />
 </head>
 <body>
@@ -16,7 +18,6 @@
         <div class="container-main-panel--title-bar">
             <div class="container-main-panel--title-bar-content">
                 <h1 class="reset-margin-top reset-margin-btm">Flight Search</h1>
-                <!-- this will stick to the top right of the parent -->
                 <div class="search-bar-header">
                     <div class="column basket-header">
                     <div class="basket-img">
@@ -31,10 +32,10 @@
                             <button class="btn dropdown-toggle" type="button" id="dropdown-user-type" aria-haspopup="true" aria-expanded="true">
                                 <span class="filter-option pull-left">Customer</span>
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user-type">
-                                <li><a href="#" id="customer-link">Customer</a></li>
-                                <li><a href="#" id="staff-link">Staff</a></li>
-                                <li><a href="#" id="corporateBookingForm-link">Corporate booking</a></li>
+                            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user-type" tab-index="-1" role="listbox">
+                                <li><a href="#" id="customer-link" role="option">Customer</a></li>
+                                <li><a href="#" id="staff-link" role="option">Staff</a></li>
+                                <li><a href="#" id="corporateBookingForm-link" role="option">Corporate booking</a></li>
                             </ul>
                         </div>
                     </div>
@@ -42,15 +43,15 @@
             </div>
         </div>
         <div class="flight-search">
-            <form action="" class="search">
-                <div class="well content mCustomScrollbar" data-mcs-theme="minimal-dark">
+            <form class="search">
+                <div class="well">
                     <div class="row">
                         <div class='col-xs-6 col-md-4'>
-                            <div class="form-group">
-                                <label for="departure">From</label>
-                                <div class='input-group date' id='departureFrom'>
-                                    <input type='text' class="form-control" placeholder="departure" id="departure" data-provide="typeahead" name="search" placeholder="london"/>
-                                    <span class="input-group-addon">
+                            <label for="departure">From</label>
+                            <div class="form-group" id="country">
+                                <div class='input-group' id='departureFrom'>
+                                    <input class="form-control typeahead" type="text" placeholder="London">
+                                    <span class="input-group-addon" type="button">
                                         <span class="glyphicon glyphicon-option-vertical"></span>
                                     </span>
                                 </div>
@@ -58,20 +59,19 @@
                             <div class="form-group">
                                 <label for="departure">Departing </label>
                                 <div class='input-group date' id='datetimepickerDeparture'>
-                                    <input type='text' class="form-control" id="departure"/>
-                                    <span class="input-group-addon">
+                                    <input type='text' class="form-control" id="departure" data-target="#myModal"/>
+                                    <span class="input-group-addon" data-toggle="modal" data-target="#myModal">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
                                 </div>
-                                
                             </div>
                         </div>
                         <div class='col-xs-6 col-md-4'>
-                                <div class="form-group">
-                                <label for="departureTo">To</label>
-                                <div class='input-group date' id='departureTo'>
-                                    <input type='dropdown' class="form-control" id="to" />
-                                    <span class="input-group-addon">
+                            <label for="departureTo">To</label>
+                            <div class="form-group" id="country">
+                                <div class='input-group' id='departureFrom'>
+                                    <input class="form-control typeahead" type="text" placeholder="London">
+                                    <span class="input-group-addon" type="button">
                                         <span class="glyphicon glyphicon-option-vertical"></span>
                                     </span>
                                 </div>
@@ -79,104 +79,105 @@
                             <div class="form-group">
                                 <label for="datetimepickerTo">Returning</label>
                                 <div class='input-group date' id='datetimepickerTo'>
-                                <input type='text' class="form-control" id="to" />
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
+                                <input type='text' class="form-control" id="to" data-target="#myModal" />
+                                <span class="input-group-addon" data-toggle="modal" data-target="#myModal">
+                                    <span class="glyphicon glyphicon-calendar" ></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="well-footer">
+                    <div class="custom-checkbox pull-left sml">
+                        <input id="checkboxIndirect" class="light" type="checkbox" name="test" tabindex="30">
+                        <label for="checkboxIndirect" class="sml-chk-box">
+                            <span>Indirect</span>
+                        </label>
+                    </div>
+                    <div class="plusDays">
+                        <input id="flexiblelimit" type="number" hidden="">
+                        <input type="number" id="plusDaysInput" min="0" value="1" tabindex="31" name="requestData.flexibleDays">
+                        <label for="plusDaysInput">
+                            <span>+ day(s)</span>
+                        </label>
+                    </div>
+                    <div class="selectLessGreater custom-dropdown type-one">
+                        <div class="visuallyhidden">
+                            <label for="filter-by-value">Filter by value</label>
+                        </div>
+                        <div class="btn-group bootstrap-select">
+                            <!-- <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" role="button" data-id="filter-by-value" tabindex="32" title="Nothing selected">
+                                <span class="filter-option pull-left">Nothing selected</span>&nbsp;
+                                <span class="bs-caret">
+                                    <span class="caret"></span>
+                                </span>
+                            </button> -->
+                            <select id="myDropDown" type="button" class="filter-option pull-left btn dropdown-toggle bs-placeholder btn-default">Nothing selected
+                                <option>Milk</option>
+                                <option>Egg</option>
+                                <option>Bread</option>
+                                <option>Fruits</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="valueLessGreater">
+                        <div class="valueLessGreater-currency">
+                            <label for="search-amt" id="locationCurrency">£</label>
+                        </div>
+                        <input type="text" id="currencyDTO" hidden="hidden">
+                        <input type="text" id="currency" hidden="hidden">
+                        <input type="text" id="allowedDecimals" hidden="hidden">
+                        <input type="text" id="currencySymbol" hidden="hidden">
+                        <input type="text" class="form-control" id="search-amt" name="requestData.filterPrice" tabindex="33">
+                    </div>
+                    <div class="search-form-button-container">
+                        <button type="submit" name="button" id="submit-flight-search" class="search-form-button" data-element="search" tabindex="34">
+                            <span>Search</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">×</button>
+                    </div>
+                    <div class="ezj-modal-body modal-body">
+                        <span class="pick-date-header">Pick a depature date...</span>
+                        <div class="row">
+                            <div class="flight-calendar-tabs">
+                                <div class='col-md-6'>
+                                    <div class="return-tab active" data-value="return">
+                                        <label>Return</label>
+                                    </div>
+                                </div>
+                                <div class='col-md-6'>
+                                    <div class="one-way-tab" data-value="one-way">
+                                        <label>One way</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div id='datetimepickerFrom'></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div id='datetimepickerTo'></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </form>
-            <div class="well-footer">
-                <div class="custom-checkbox pull-left sml">
-                    <input id="checkboxIndirect" class="light" type="checkbox" name="test" tabindex="30">
-                    <label for="checkboxIndirect" class="sml-chk-box">
-                        <span>Indirect</span>
-                    </label>
-                </div>
-                <div class="plusDays">
-                    <input id="flexiblelimit" type="number" hidden="">
-                    <input type="number" id="plusDaysInput" min="0" value="1" tabindex="31" name="requestData.flexibleDays">
-                    <label for="plusDaysInput">
-                        <span>+ day(s)</span>
-                    </label>
-                </div>
-                <div class="selectLessGreater custom-dropdown type-one">
-                    <div class="visuallyhidden">
-                        <label for="filter-by-value">Filter by value</label>
-                    </div>
-                    <div class="btn-group bootstrap-select">
-                        <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" role="button" data-id="filter-by-value" tabindex="32" title="Nothing selected">
-                            <span class="filter-option pull-left">Nothing selected</span>&nbsp;
-                            <span class="bs-caret">
-                                <span class="caret"></span>
-                            </span>
-                        </button>
-                        <div class="dropdown-menu open" role="combobox">
-                            <ul class="dropdown-menu inner" role="listbox" aria-expanded="false"></ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="valueLessGreater">
-                    <div class="valueLessGreater-currency">
-                        <label for="search-amt" id="locationCurrency">£</label>
-                    </div>
-                    <input type="text" id="currencyDTO" hidden="hidden">
-                    <input type="text" id="currency" hidden="hidden">
-                    <input type="text" id="allowedDecimals" hidden="hidden">
-                    <input type="text" id="currencySymbol" hidden="hidden">
-                    <input type="text" class="form-control" id="search-amt" name="requestData.filterPrice" tabindex="33">
-                </div>
-                <div class="search-form-button-container">
-                    <button type="submit" name="button" id="submit-flight-search" class="search-form-button" data-element="search" tabindex="34">
-                        <span>Search</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Launch demo modal</button>
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-                <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Create new event</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <label class="col-xs-4" for="title">Event title</label>
-                                <input type="text" name="title" id="title" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <label class="col-xs-4" for="starts-at">Starts at</label>
-                                <input type="text" name="starts_at" id="starts-at" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <label class="col-xs-4" for="ends-at">Ends at</label>
-                                <input type="text" name="ends_at" id="ends-at" />
-                            </div>
-                        </div>
-                    </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="save-event">Save changes</button>
                     </div>
-                </div><!-- /.
+                </div>
             </div>
-            <!-- /.modal-content -->
         </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
         <section class="main-panel__search-results__column-12" data-interact="fixedTable">
         <div class="main-panel__search-results--header row reset-margin-left reset-margin-right" data-interact="fixedTableHeader">
             <div class="column one search-view-radio">
@@ -193,62 +194,62 @@
                     </section>
                 </div>
             </div>
-                <div class="column two"></div>
-                <div class="column three">
-                    <div class="flight-info-cell" data-toggle="popover" data-placement="bottom" data-original-title="" title="">
-                        <i class="fa fa-info-circle"></i>
-                        <div class="flight-content" style="display:none">
-                            <div class="flight-table-fare-info">
-                                <ul>
-                                    <li>
-                                        <span class="fare-info">
-                                            <label class="count">STD</label>
-                                            <label class="count-label">The Standard fare type allows the user to add other products depending on the Channel and availability for the sector or flight: (Hold Bags, Excess Weight, Seats, Sporting Equipment, Third Party Ancillaries)
-                                            </label>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span class="fare-info">
-                                            <label class="count">STAFF</label>
-                                            <label class="count-label">The Staff fare type allows the user to add other products depending on the Channel and availability for the sector or flight: (Hold Bags, Excess Weight, Seats, Sporting Equipment)
-                                            </label>
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
+            <div class="column two"></div>
+            <div class="column three">
+                <div class="flight-info-cell" data-toggle="tooltip" data-placement="bottom" data-original-title="" title="">
+                    <i class="fa fa-info-circle"></i>
+                    <div class="flight-content" style="display:none">
+                        <div class="flight-table-fare-info">
+                            <ul>
+                                <li>
+                                    <span class="fare-info">
+                                        <label class="count">STD</label>
+                                        <label class="count-label">The Standard fare type allows the user to add other products depending on the Channel and availability for the sector or flight: (Hold Bags, Excess Weight, Seats, Sporting Equipment, Third Party Ancillaries)
+                                        </label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="fare-info">
+                                        <label class="count">STAFF</label>
+                                        <label class="count-label">The Staff fare type allows the user to add other products depending on the Channel and availability for the sector or flight: (Hold Bags, Excess Weight, Seats, Sporting Equipment)
+                                        </label>
+                                    </span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div>Fare prices</div>
                 </div>
-                <div class="column four">
-                    <div class="custom-dropdown type-three">
-                        <div class="btn-group bootstrap-select journey">
-                            <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Journey time (ascending)">
-                                <span class="filter-option pull-left">Journey time (ascending)</span>&nbsp;
-                                <span class="bs-caret">
-                                    <span class="caret"></span>
-                                </span>
-                            </button>
-                            <div class="dropdown-menu open" role="combobox">
-                                <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
-                                    <li data-original-index="0" class="selected">
-                                        <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true">
-                                            <span class="text">Journey time (ascending)</span>
-                                            <span class="glyphicon glyphicon-ok check-mark"></span>
-                                        </a>
-                                    </li>
-                                    <li data-original-index="1">
-                                        <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
-                                            <span class="text">Journey time (descending)</span>
-                                            <span class="glyphicon glyphicon-ok check-mark"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <select class="selectpicker" name="select-picker" tabindex="-98">
-                                <option selected="">Journey time (ascending)</option>
-                                <option>Journey time (descending)</option>
-                            </select>
+                <div>Fare prices</div>
+            </div>
+            <div class="column four">
+                <div class="custom-dropdown type-three">
+                    <div class="btn-group bootstrap-select journey">
+                        <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Journey time (ascending)">
+                            <span class="filter-option pull-left">Journey time (ascending)</span>&nbsp;
+                            <span class="bs-caret">
+                                <span class="caret"></span>
+                            </span>
+                        </button>
+                        <div class="dropdown-menu open" role="combobox">
+                            <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
+                                <li data-original-index="0" class="selected">
+                                    <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true">
+                                        <span class="text">Journey time (ascending)</span>
+                                        <span class="glyphicon glyphicon-ok check-mark"></span>
+                                    </a>
+                                </li>
+                                <li data-original-index="1">
+                                    <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                        <span class="text">Journey time (descending)</span>
+                                        <span class="glyphicon glyphicon-ok check-mark"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <select class="selectpicker" name="select-picker" tabindex="-98">
+                            <option selected="">Journey time (ascending)</option>
+                            <option>Journey time (descending)</option>
+                        </select>
                         </div>
                     </div>
                </div>
@@ -270,7 +271,7 @@
                     <th>Status</th>
                 </tr>
             </thead>
-            <tbody class="content mCustomScrollbar" data-mcs-theme="minimal-dark">
+            <tbody class="content mCustomScrollbar" data-mcs-theme="minimal-dark" id="country">
                 
             </tbody>
         </table>
@@ -281,6 +282,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Zebra_datepicker/1.9.11/zebra_datepicker.min.js"></script>
 <script src="../easyJet-theme/index.js"></script>
 </body>
 </html>
