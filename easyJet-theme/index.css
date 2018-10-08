@@ -83,6 +83,7 @@ div.login-layout div.login-overlay div.login-footer div.logo {
 .well{
     margin-bottom: 0;
     border-radius: 0;
+    padding: 0;
 
   }
   
@@ -107,7 +108,6 @@ div.login-layout div.login-overlay div.login-footer div.logo {
     position: relative;
 }
 .well-footer .selectLessGreater {
-    /* float:left; */
     width: 120px;
     height: 34px;
     display: inline-block;
@@ -284,7 +284,7 @@ reg section span {
     border-left: 2px solid #363840;
 }
 .column.three .flight-info-cell, .fa.fa-info-circle{
-    padding: 3px;
+    padding: 8px;
 }
 .column.three div{
     position: relative;
@@ -306,7 +306,6 @@ reg section span {
     word-wrap: break-word;
 }
 .container-main-panel--title-bar {
-    /* position: fixed; */
     width: 100%;
     left: 0;
     top: 0;
@@ -330,8 +329,6 @@ reg section span {
 }
 .container-main-panel--title-bar h1 {
     float: left !important;
-    float: left;
-    font-family: Nunito;
     font-size: 20px;
     line-height: 50px;
     
@@ -342,7 +339,6 @@ reg section span {
 .search-bar-header, .customer-search-header-bar {
     position: relative;
     float: right !important;
-    float: right;
     background-color: #2b2c33;
     height: 50px;
 }
@@ -354,7 +350,6 @@ float: right !important;
 }
 .search-bar-header .column, .customer-search-header-bar .column {
     float: right !important;
-    float: right;
     position: relative;
     line-height: 34px;
     margin: 8px 0;
@@ -467,3 +462,96 @@ text-align: center;
  .flight-calendar-tabs label{
      padding-top: 5px;
  }
+.search-bar-search-component .selectLessGreater {
+    /* float:left; */
+    width: 120px;
+    height: 34px;
+    display: inline-block;
+    margin-top: 8px;
+}
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.custom-dropdown .bootstrap-select {
+    width: 100% !important;
+}
+#departureTo .twitter-typeahead{
+    display: block !important;
+    position: relative;
+    z-index: 1px;
+}
+#departureFrom .twitter-typeahead{
+    display: block !important;
+    position: relative;
+
+}
+.modal-body .searchFlights{
+width: 90%;
+height: 500px;
+color: #2b2c33;
+overflow: auto;
+}
+.searchFlights li a{
+cursor: pointer;
+}
+.modal-body .searchFlights li{
+    padding: 10px;
+    /* margin: 5px; */
+    background: floralwhite;
+    border-bottom: 1px solid #fff;
+    border-left: 3px solid #e4e4e4;
+}
+.modal-body .searchFlights ul{
+    list-style: none;
+}
+#myCountry .modal-header {
+    border: 0;
+}
+#myCountry .modal-content .modal-footer {
+    border: 0;
+}
+.input-group .form-control:first-child{
+    background: white;
+}
+.twitter-typeahead .tt-menu {
+    background:aliceblue;
+    width: 50%;
+    border: 1px solid grey;
+    top: 40px !important;
+    padding: 10px;
+
+}
+.reg section.out abbr  { 
+    position: relative;
+    bottom:18px;
+    left: 13px;
+    padding-left:5px;
+}
+section.out {
+    padding-right: 48px;
+}
+.column.three div {
+    position: relative;
+    padding-top: 13px;
+    left: 410px;
+    float: left;
+}
+.main-panel__search-results__column-12  .column.dropdown-user-type .custom-dropdown.type-three button span{
+    text-overflow: ellipsis;
+    padding-top: 5px;
+}
+.container table section{
+    width: 50px;
+    height: 100px;
+}
+.return-tab.active {
+    background: black;
+    color: white;
+}

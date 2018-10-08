@@ -1,37 +1,142 @@
-$(document).ready(function(){
- $('.dropdown-toggle').dropdown();
- 
-// function submit(){
-//     function createNode(element) {
-//         return document.createElement(element);
-//     }
+// @ts-check
+
+var $elHomePanel = $('.control-panel--main-container__home-view');
+var $elCorporateBookingPodPanel = $('.main-panel__search-panel__form .corporate-booking');
+$(document).ready(function () {
+  $('.dropdown-toggle').dropdown();
+
+  // $('#submit-flight-search').click(function(){
+
+
+  //   function createNode(element) {
+  //     return document.createElement(element);
+  // }
+
+  // function append(parent, el) {
+  //   return parent.appendChild(el);
+  // }
+
+
+  // const url = 'https://gist.githubusercontent.com/Maryann380/ead39e3ed34bbfb619a3acd07a4682c4/raw/21124a369f57b489c1102e11f40be787bb732d33/country1.json';
+  // fetch(url)
+
+  // .then((resp) => resp.json())
+  // .then(function(data) {
+  //     debugger;
+  //   let airports = data;
+
+  // return airports.map(function(airports) {
+  //  $('#result').append(airports.label);
+  //  let li = createNode('li'),
+  //         img = createNode('img'), 
+  //         title = createNode('title'), 
+  //         name = createNode('name'), 
+  //         surname = createNode('surname'), 
+  //         dob = createNode('dob'), 
+  //         span = createNode('span'); 
+  //     img.src = human.picture.medium;
+  //     span.innerHTML = `${human.name.title} ${human.name.name} ${human.name.surname} ${human.name.dob}`;
+  //     append(li, img,title, name, surname, dob);
+  //     append(li, span);
+  //     append(ul, li);
+  //   })
+  //   })
+  // })
+  // })
+
+
+
+
+
+
+
+  $(document).ready(function () {
     
-//     function append(parent, el) {
-//       return parent.appendChild(el);
-//     }
-    
-//     const ul = document.getElementById('#country');
-//     const url = 'https://gist.githubusercontent.com/Maryann380/ead39e3ed34bbfb619a3acd07a4682c4/raw/21124a369f57b489c1102e11f40be787bb732d33/country1.json';
-//     fetch(url)
-    
-//     .then((resp) => resp.json())
-//     .then(function(data) {
-//         debugger;
-//       let airports = data;
-//       return airports.map(function(country) {
-//       })
-//     })
-// }
+    $('#departureFrom').click(function () {
+      var displayResources = $('#searchFlightCountry');
+
+      displayResources.text('Loading data from JSON source...');
+
+      $.ajax({
+        type: "GET",
+        dataType: 'JSON',
+        url: "https://gist.githubusercontent.com/Maryann380/cf0ed54d862f91c4dc0a6938200e5750/raw/679140b84ab54cc2b9b421b5f66acb96914ae75f/airports.json",
+        success: function (data) {
+          console.log(data.airports);
+          var output = "<div><ul>";
+          for (var i = 0; i < data.airports.length; i++) {
+            output += "<li><button class='btn-link btn' data-target='#myCountry'>" + data.airports[i].label + "</button></li>";
+          }
+          output += "</ul></div>";
+
+          displayResources.html(output);
+          $("li").addClass("col-sm-12  reset-padding-right reset-padding-left");
+        }
+      });
+
+    });
+  });
+
+$('body').on('click', '#searchFlightCountry button[data-target="#myCountry"]', function() {
+  //$ is used only if we are trying to return a jquery object
+  var myCountry = $(this).text();
+  var inputId = $('#flightDeparture').val(); // the input type hidden
+  $('#' + inputId).val(myCountry);
+  $('#myCountry').modal('toggle');
+});
+
+
+$('.input-group-addon').on('click',function(){
+  var $input = $(this).prev('.twitter-typeahead').find('.tt-input');
+  $('#flightDeparture').val($input.attr('id'));
+})    
+
+//        //get text box id
+//        //get the clicked value 
+//        //and add to textbox  value 
+//        //close the popup
+// });
+
+
+  $(document).ready(function () {
+
+    $('#submit-flight-search').click(function () {
+      var displayResources = $('#result');
+
+      displayResources.text('Loading data from JSON source...');
+
+      $.ajax({
+        type: "GET",
+        dataType: 'JSON',
+        url: "https://gist.githubusercontent.com/Maryann380/d9d1bccc02ff1348ffeaf36575718cb1/raw/b61b030aa676ed292dd42db528038ea8f1b4b3b0/flight-search.json",
+        success: function (data) {
+          console.log(data.flight_data);
+          var output = "<table><thead><tr><th>Airline</th><th>Flight_number</th><th>From</th><th>To</th><th>Departure</th><th>Arrival</th><th>Duration</th><th>Cost</th></thead><tbody>";
+          for (var i = 0; i < data.flight_data.length; i++) {
+            output += "<tr><td>" + data.flight_data[i].airline + "</td><td>" + data.flight_data[i].flight_number + "</td><td>" + data.flight_data[i].from + "</td><td>" + data.flight_data[i].to + "</td><td>" + data.flight_data[i].departure + "</td><td>" + data.flight_data[i].arrival + "</td><td>" + data.flight_data[i].duration + "</td><td>" + data.flight_data[i].cost + "</td></tr>";
+          }
+          output += "</tbody></table>";
+
+          displayResources.html(output);
+          $("table").addClass("table");
+          $("section #result").css("border", '1px solid');
+        }
+      });
+      if($('#submit-flight-search').hasClass()){
+        $('#submit-flight-search button').toggle();
+      }
+    });
+  });
+});
+
+
 var substringMatcher = function(strs) {
     return function findMatches(q, cb) {
-      var matches, substringRegex;
-  
-      // an array that will be populated with substring matches
+      var matches, substringRegex; // an array that will be populated with substring matches
       matches = [];
-  
       // regex used to determine if a string contains the substring `q`
       substrRegex = new RegExp(q, "i");
-  
+
       // iterate through the pool of strings and for any string that
       // contains the substring `q`, add it to the `matches` array
       $.each(strs, function(i, str) {
@@ -39,11 +144,11 @@ var substringMatcher = function(strs) {
           matches.push(str);
         }
       });
-  
+
       cb(matches);
     };
   };
-  
+
   var states = [
     "Alabama",
     "Alaska",
@@ -96,7 +201,7 @@ var substringMatcher = function(strs) {
     "Wisconsin",
     "Wyoming"
   ];
-  
+
   $(document).ready(function() {
     $("#country .typeahead").typeahead(
       {
@@ -110,16 +215,43 @@ var substringMatcher = function(strs) {
       }
     );
   });  
-})
 
-// $('.dropdown-toggle').dropdown();
 
-$('#datetimepickerFrom').Zebra_DatePicker({
-  direction: 1,
+// // $('.dropdown-toggle').dropdown();
+
+function onSelect() {
+  var $modal = $(this.data('target'));
+  $modal.modal('toggle');
+}
+
+$('#departure').Zebra_DatePicker({
+  direction: true,
   pair: $('.modal-body .form-group #datetimepickerTo'),
-	always_visible: $('#myModal .form-group #datetimepickerFrom')
+  always_visible: $('#myModal .form-group #datetimepickerFrom'),
+  onSelect
 });
-$('#datetimepickerTo').Zebra_DatePicker({
-  direction: 2, 
-  always_visible: $('#myModal .form-group #datetimepickerTo')
+$('#to').Zebra_DatePicker({
+  direction: 2,
+  always_visible: $('#myModal .form-group #datetimepickerTo'),
+  onSelect
 });
+
+$('#customer-link').on('click', function ( event ) {
+  event.preventDefault();
+  $('.control-panel--main-container > div').addClass('hide');
+  $elHomePanel.removeClass('hide');
+  $elCorporateBookingPodPanel.addClass('hide');
+  $( this ).parents('.custom-dropdown').find('.filter-option').html('Customer');
+} );
+
+$(function(){
+  $(".dropdown-menu-right li a").click(function(){
+   $("#dropdown-user-type:first-child").text($(this).text());
+     $("#dropdown-user-type:first-child").val($(this).text());
+     if($('.dropdown-menu.dropdown-menu-right').hasClass('open')){
+       $('.dropdown-menu.dropdown-menu-right').toggle();
+     }
+  });
+});
+
+
