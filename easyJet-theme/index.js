@@ -1,63 +1,20 @@
 // @ts-check
-
-var $elHomePanel = $('.control-panel--main-container__home-view');
 var $elCorporateBookingPodPanel = $('.main-panel__search-panel__form .corporate-booking');
+var $elHomePanel = $('.control-panel--main-container__home-view');
+
+
 $(document).ready(function () {
   $('.dropdown-toggle').dropdown();
 
-  // $('#submit-flight-search').click(function(){
-
-
-  //   function createNode(element) {
-  //     return document.createElement(element);
-  // }
-
-  // function append(parent, el) {
-  //   return parent.appendChild(el);
-  // }
-
-
-  // const url = 'https://gist.githubusercontent.com/Maryann380/ead39e3ed34bbfb619a3acd07a4682c4/raw/21124a369f57b489c1102e11f40be787bb732d33/country1.json';
-  // fetch(url)
-
-  // .then((resp) => resp.json())
-  // .then(function(data) {
-  //     debugger;
-  //   let airports = data;
-
-  // return airports.map(function(airports) {
-  //  $('#result').append(airports.label);
-  //  let li = createNode('li'),
-  //         img = createNode('img'), 
-  //         title = createNode('title'), 
-  //         name = createNode('name'), 
-  //         surname = createNode('surname'), 
-  //         dob = createNode('dob'), 
-  //         span = createNode('span'); 
-  //     img.src = human.picture.medium;
-  //     span.innerHTML = `${human.name.title} ${human.name.name} ${human.name.surname} ${human.name.dob}`;
-  //     append(li, img,title, name, surname, dob);
-  //     append(li, span);
-  //     append(ul, li);
-  //   })
-  //   })
-  // })
-  // })
-
-
-
-
-
-
+  $(window).on("load",function(){
+    $(".searchFlights").mCustomScrollbar();
+});
 
   $(document).ready(function () {
-    
     $('#departureFrom').click(function () {
       var displayResources = $('#searchFlightCountry');
-
-      displayResources.text('Loading data from JSON source...');
-
-      $.ajax({
+       displayResources.text('Loading data from JSON source...');
+        $.ajax({
         type: "GET",
         dataType: 'JSON',
         url: "https://gist.githubusercontent.com/Maryann380/cf0ed54d862f91c4dc0a6938200e5750/raw/679140b84ab54cc2b9b421b5f66acb96914ae75f/airports.json",
@@ -84,38 +41,26 @@ $('body').on('click', '#searchFlightCountry button[data-target="#myCountry"]', f
   $('#' + inputId).val(myCountry);
   $('#myCountry').modal('toggle');
 });
-
-
 $('.input-group-addon').on('click',function(){
   var $input = $(this).prev('.twitter-typeahead').find('.tt-input');
   $('#flightDeparture').val($input.attr('id'));
-})    
+});
 
-//        //get text box id
-//        //get the clicked value 
-//        //and add to textbox  value 
-//        //close the popup
-// });
-
-
-  $(document).ready(function () {
-
-    $('#submit-flight-search').click(function () {
+$(document).ready(function () {
+  $('#submit-flight-search').click(function () {
       var displayResources = $('#result');
-
-      displayResources.text('Loading data from JSON source...');
-
-      $.ajax({
+       displayResources.text('Loading data from JSON source...');
+        $.ajax({
         type: "GET",
         dataType: 'JSON',
         url: "https://gist.githubusercontent.com/Maryann380/d9d1bccc02ff1348ffeaf36575718cb1/raw/b61b030aa676ed292dd42db528038ea8f1b4b3b0/flight-search.json",
         success: function (data) {
           console.log(data.flight_data);
-          var output = "<table><thead><tr><th>Airline</th><th>Flight_number</th><th>From</th><th>To</th><th>Departure</th><th>Arrival</th><th>Duration</th><th>Cost</th></thead><tbody>";
+          var output = "<thead><tr><th>Airline</th><th>Flight_number</th><th>From</th><th>To</th><th>Departure</th><th>Arrival</th><th>Duration</th><th>Cost</th></thead><tbody class='scroll-shadow mCustomScrollbar _mCS_14'>";
           for (var i = 0; i < data.flight_data.length; i++) {
             output += "<tr><td>" + data.flight_data[i].airline + "</td><td>" + data.flight_data[i].flight_number + "</td><td>" + data.flight_data[i].from + "</td><td>" + data.flight_data[i].to + "</td><td>" + data.flight_data[i].departure + "</td><td>" + data.flight_data[i].arrival + "</td><td>" + data.flight_data[i].duration + "</td><td>" + data.flight_data[i].cost + "</td></tr>";
           }
-          output += "</tbody></table>";
+          output += "</tbody>";
 
           displayResources.html(output);
           $("table").addClass("table");
@@ -254,4 +199,6 @@ $(function(){
   });
 });
 
+
+ 
 

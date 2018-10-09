@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css"
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-typeahead/2.10.6/jquery.typeahead.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Zebra_datepicker/1.9.11/css/bootstrap/zebra_datepicker.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../easyJet-theme/index.css" />
@@ -27,7 +27,7 @@
                         <div class="basket-img">
                             <span data-toggle="popover" title="" data-content="Flight added to basket" data-placement="bottom" data-trigger="manual"
                                 data-original-title="">
-                                <i class="fas fa-shopping-basket"></i>
+                               <i class="fa fa-shopping-basket"></i>
                             </span>
                         </div>
                         <span class="basket-count"></span>
@@ -212,96 +212,74 @@
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         </div>
                         <div class="ezj-modal-body modal-body">
-                            <div class="searchFlights" id="searchFlightCountry"></div>
+                            <div class="searchFlights content mCustomScrollbar" data-mcs-theme="minimal-dark" id="searchFlightCountry"></div>
                         </div>
                         <div class="modal-footer">
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <section class="main-panel__search-results__column-12" data-interact="fixedTable">
-                <div class="main-panel__search-results--header row reset-margin-left reset-margin-right" data-interact="fixedTableHeader">
-                    <div class="column one search-view-radio">
-                        <div class="reg">
-                            <section class="out">
-                                <input type="radio" value="Outbound" name="search-view-radio" checked="">
-                                <span></span>
-                                <abbr> Outbound </abbr>
-                            </section>
-                            <section class="return">
-                                <input type="radio" value="Return" name="search-view-radio">
-                                <span></span>
-                                <abbr> Return </abbr>
-                            </section>
+            <div class="fixed-table-holder" style="min-height: 355px; height: 710px;">
+                <section class="main-panel__search-results__column-12" data-interact="fixedTable" data-topoffset="250" data-bottomoffset="50">
+                    <div class="main-panel__search-results--header row reset-margin-left reset-margin-right" data-interact="fixedTableHeader">
+                        <div class="column one search-view-radio">
+                            <div class="reg">
+                                <section class="out">
+                                    <input type="radio" value="Outbound" name="search-view-radio" checked="">
+                                    <span></span>
+                                    <abbr> Outbound </abbr>
+                                </section>
+                                <section class="return">
+                                    <input type="radio" value="Return" name="search-view-radio">
+                                    <span></span>
+                                    <abbr> Return </abbr>
+                                </section>
+                            </div>
                         </div>
-                    </div>
-                    <div class="column two"></div>
-                    <div class="column three">
-                        <div class="flight-info-cell" data-toggle="tooltip" data-placement="bottom" data-original-title="" title="">
-                            <i class="fa fa-info-circle"></i>
-                            <svg-icon><src href="sprite.svg#si-glyph-circle-info" /></svg-icon>
-                            <div class="flight-content" style="display:none">
-                                <div class="flight-table-fare-info">
-                                    <ul>
-                                        <li>
-                                            <span class="fare-info">
-                                                <label class="count">STD</label>
-                                                <label class="count-label">The Standard fare type allows the user to add other products depending on
-                                                    the Channel and availability for the sector or flight: (Hold Bags, Excess
-                                                    Weight, Seats, Sporting Equipment, Third Party Ancillaries)
-                                                </label>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <span class="fare-info">
-                                                <label class="count">STAFF</label>
-                                                <label class="count-label">The Staff fare type allows the user to add other products depending on the
-                                                    Channel and availability for the sector or flight: (Hold Bags, Excess
-                                                    Weight, Seats, Sporting Equipment)
-                                                </label>
-                                            </span>
-                                        </li>
-                                    </ul>
+                        <div class="column two"></div>
+                        <div class="column three">
+                            <div class="flight-info-cell" data-toggle="tooltip" data-placement="bottom" data-original-title="" title="">
+                                <i class="fa fa-info-circle"></i>
+                                <svg-icon><src href="sprite.svg#si-glyph-circle-info" /></svg-icon>
+                                <div class="flight-content" style="display:none">
+                                    <div class="flight-table-fare-info">
+                                        <ul>
+                                            <li>
+                                                <span class="fare-info">
+                                                    <label class="count">STD</label>
+                                                    <label class="count-label">The Standard fare type allows the user to add other products depending on
+                                                        the Channel and availability for the sector or flight: (Hold Bags, Excess
+                                                        Weight, Seats, Sporting Equipment, Third Party Ancillaries)
+                                                    </label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="fare-info">
+                                                    <label class="count">STAFF</label>
+                                                    <label class="count-label">The Staff fare type allows the user to add other products depending on the
+                                                        Channel and availability for the sector or flight: (Hold Bags, Excess
+                                                        Weight, Seats, Sporting Equipment)
+                                                    </label>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div>Fare prices</div>
-                    </div>
-                    <div class="column four">
-                        <div class="column dropdown-user-type">
-                            <div class="custom-dropdown type-three">
-                                <button class="btn dropdown-toggle" type="button" id="dropdown-user-type" id="journeyTime" aria-haspopup="true" aria-expanded="true" data-toggle="dropdown"> 
-                                    <span class="filter-option pull-left">Journey time (ascending)
-                                        <span class="caret"></span>
-                                    </span>
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user-type" tab-index="-1" role="listbox">
-                                    <li>
-                                        <a href="#" id="customer-link" role="option" tabindex="-1">Journey time (ascending)
-                                            <span class="glyphicon glyphicon-ok check-mark"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" id="staff-link" role="option" tabindex="-1">Journey time (descending)</a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <div>Fare prices</div>
                         </div>
                     </div>
-                </div>
+                    <table class="table table-hover table-search-results" id="result"></table>
+                </section>
             </div>
-            <table class="table table-hover table-search-results fixed_headers" id="result">
-            </table>
-        </section>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Zebra_datepicker/1.9.11/zebra_datepicker.min.js"></script>
-        <script src="../easyJet-theme/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Zebra_datepicker/1.9.11/zebra_datepicker.min.js"></script>
+    <script src="../easyJet-theme/index.js"></script>
 </body>
 </html>
